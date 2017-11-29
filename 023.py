@@ -1,4 +1,4 @@
-
+import turtle
 
 #defining a function
 def celciusToFahrenheit():
@@ -13,6 +13,11 @@ def fahrenheitToCelcius():
     tempInCelcius = ((myInput - 32)/9)*5
     print("The temp of " , myInput , "in fahrenheit is" ,
           tempInCelcius , "in Celcius")
+    myTurtle = turtle.Turtle()
+    myTurtle.forward(tempInCelcius)
+    myTurtle.left(90)
+    myTurtle.forward(tempInCelcius)
+    turtle.done()
 
 optionSelected = input("Enter 'c' for output in celcius and"
                        "Enter 'f' for output in fahrenheit")
@@ -23,3 +28,5 @@ elif(optionSelected == 'f'):
     celciusToFahrenheit()
 else:
     print("You selected an invalid option")
+
+
