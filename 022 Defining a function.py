@@ -3,6 +3,7 @@ def celciusToFahrenheit():
     myInput = int(input("Enter a temperature in Celcius : "))
     tempInFahrenheit = (myInput*9 + 160) / 5
     print("The temp of " , myInput , "in celcius is " , tempInFahrenheit , "in Fahreiheit")
+    exit(0)
 
 
 def fahrenheitToCelcius():
