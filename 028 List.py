@@ -1,4 +1,8 @@
-myList = [1, 2, 3, 5, 8, 13]
+import turtle
+
+myTurtle = turtle.Turtle()
+
+myList = [1, 2, 3, 5, 8, 13, 25]
 
 
 print(myList)
@@ -23,3 +27,11 @@ def addMyList():
 
 
 addMyList()
+
+def usingTurtleWithLists():
+    for i in range(0, len(myList)):
+        myTurtle.forward(myList[i]*10)
+        myTurtle.right(90)
+
+usingTurtleWithLists()
+turtle.done()
