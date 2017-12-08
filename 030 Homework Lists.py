@@ -9,19 +9,17 @@ myList = [1, 2, 3, 57, 8, 13, 25, 50, 30]
 
 def addMyList():
     sumOfList = 0
-    print("Summing up my list of numbers")
     for i in range(0, len(myList)):
         sumOfList = sumOfList + myList[i]
-    print("The sum of myList is", sumOfList)
+    print("Sum of list =", sumOfList)
 
 addMyList()
 
 def multiplyMyList():
     MultiplySum = 1
-    print("The sum of all the items multiplied")
     for abc in range(0, len(myList)):
         MultiplySum =  MultiplySum * myList[abc]
-    print("The sum =", MultiplySum)
+    print("Multiply sum of list =", MultiplySum)
 
 multiplyMyList()
 
