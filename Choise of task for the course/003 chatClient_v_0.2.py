@@ -1,8 +1,8 @@
 import socket
 from threading import Thread
 s = socket.socket()         # Create a socket object
-host = '127.0.0.1'          # Server IP
-port = 33555                # Reserve a port for your service.
+host = '127.0.0.1'          # Server ip
+port = 33555                # Server port
 
 def connectTo():
     try:

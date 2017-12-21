@@ -3,15 +3,15 @@ from threading import Thread
 
 s = socket.socket()         # Create a socket object
 host = '127.0.0.1'          # Lan ip or localhost (for listening)
-port = 33555                # Reserve a port for your service (for listening).
+port = 33555                # Reserve a port for your service (for listening)
 s.bind((host, port))        # Bind to the port
 
-s.listen(5)                 # Now wait for client connection.
+s.listen(5)                 # Now wait for client connection
 
-c, addr = s.accept()        # Establish connection with client.
+c, addr = s.accept()        # Establish connection with client
 
 print 'Got connection from', addr
-c.send('Successfully established connection to server')
+c.send("Connected to server ('" + str(host) + "', " + str(port) + ')')
 
 nickname = raw_input("Enter your nickname: ")
 
