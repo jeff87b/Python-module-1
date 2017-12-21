@@ -11,7 +11,8 @@ s.listen(5)                 # Now wait for client connection
 c, addr = s.accept()        # Establish connection with client
 
 print 'Got connection from', addr
-c.send("Connected to server ('" + str(host) + "', " + str(port) + ')')
+data = c.recv(1024)
+c.send(str(data))
 
 nickname = raw_input("Enter your nickname: ")
 

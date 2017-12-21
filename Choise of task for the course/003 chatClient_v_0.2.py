@@ -13,6 +13,7 @@ def connectTo():
 
 connectTo()
 
+s.send("Connected to server ('" + str(host) + "', " + str(port) + ')')
 print s.recv(1024)
 nickname = raw_input("Enter your nickname: ")
 print "Type i + enter for instruction."
