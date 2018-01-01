@@ -17,20 +17,14 @@ while True:
 
 print"Connected to server ('" + str(host) + "', " + str(port) + ')'
 
-while True:
-    while True:
-        if 10 > 9:
-            fileName = s.recv(1024)
-            localFileName = open("Send and receive files folder/" + fileName, 'wb')
-            bytesReceived = s.recv(4096)
-            localFileName.write(bytesReceived)
-            while bytesReceived != "":
-                bytesReceived = s.recv(4096)
-                localFileName.write(bytesReceived)
-            localFileName.close()
-            print"You received a file from " + "nickname"
-            break
-
-        else:
-            pass
-    break
+def receive():
+    fileName = s.recv(1024)
+    localFileName = open("Send and receive files folder/" + fileName, 'wb')
+    bytesReceived = s.recv(4096)
+    localFileName.write(bytesReceived)
+    while bytesReceived != "":
+        bytesReceived = s.recv(4096)
+        localFileName.write(bytesReceived)
+    localFileName.close()
+    print"You received a file from " + "nickname"
+receive()
