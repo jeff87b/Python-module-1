@@ -1,0 +1,7 @@
+The error: The file the other person receives is either empty or some bytes are missing.
+I have added print lines if you send a file from server to client.
+From client to server it's not printlines.
+
+When the error happens, receive a file process stops.
+
+-s is the command for sending a file. The file must be in "Send and receive files folder".
