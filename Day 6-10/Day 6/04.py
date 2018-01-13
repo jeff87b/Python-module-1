@@ -39,10 +39,10 @@ writeDataToANewList(shoppingList)
 def doesElementExistInShoppingList(item):
     myShoppingList = readMyDataFile("shopping.txt")
     for myItem in myShoppingList:
-        print(myItem)
+        #print(myItem)
         if myItem == item:
             print("This exists in my shopping list")
-            return myItem
+            return item
     print("The item does not exist in my shopping list")
 
 
