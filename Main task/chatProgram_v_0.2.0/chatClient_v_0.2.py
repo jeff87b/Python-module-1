@@ -1,20 +1,20 @@
 import socket
 from threading import Thread
+
 s = socket.socket()         # Create a socket object
 host = '127.0.0.1'          # Server ip
 port = 33555                # Server port
 
-def connectTo():
+while True:
     try:
         s.connect((host, port))
+        break
     except:
-        raw_input("Unable to connect to server. Press enter for retry.")
-        connectTo()
+        raw_input("Unable to connect to server. Press enter for retry")
 
-connectTo()
 
-s.send("Connected to server ('" + str(host) + "', " + str(port) + ')')
-print s.recv(1024)
+print"Connected to server ('" + str(host) + "', " + str(port) + ')'
+
 nickname = raw_input("Enter your nickname: ")
 print "Type i + enter for instruction."
 
@@ -25,6 +25,7 @@ def receving():
         except:
             print "You are no longer connected to server."
             break
+    return
 
 
 def sending():
@@ -38,12 +39,15 @@ def sending():
                 s.send(nickname + ": " + message + " ")
         except:
             break
+    return
 
 #Runs both receving() and sending() at the same time.
 try:
     Thread(target = receving).start()
-    Thread(target = sending).start()
-    #sending()
+    #Thread(target = sending).start()
+    sending()
 
 except:
     print "Error: unable to start thread"
+
+raw_input("Press enter to exit")
