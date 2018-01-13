@@ -14,12 +14,12 @@ while True:
 
     s.listen(1)
     print"Listening for incoming connection"
-    c, addr = s.accept()
 
+    c, addr = s.accept()
     print 'Got connection from', addr
 
     nickname = raw_input("Enter your nickname: ")
-    opnickname = c.recv(1024)
+    opnickname = c.recv(64)
     c.send(nickname)
 
 
@@ -39,7 +39,7 @@ while True:
                     bytesReceived = c.recv(4096)
                     localFileName.write(bytesReceived)
                 localFileName.close()
-                print"You received a file from " + nickname + " "
+                print"You received a file from " + opnickname + " "
             else:
                 print data
 
@@ -63,15 +63,10 @@ while True:
                 c.send(fileName)
                 localFileName = open("Send and receive files folder/" + fileName, 'rb')
                 bytesToSend = localFileName.read(4096)
-                print"Bytes read"
                 c.send(bytesToSend)
-                print"Bytes sent"
                 while bytesToSend != "":
-                    print"Loop started"
                     bytesToSend = localFileName.read(4096)
-                    print"Bytes read"
                     c.send(bytesToSend)
-                    print"Bytes sent"
                 localFileName.close()
                 print"Transfer complete "
             else:

@@ -17,11 +17,13 @@ while True:
             break
         except:
             raw_input("Unable to connect to server. Press enter for retry.")
+
     hostIp = socket.gethostbyname(host)
     print"Connected to server ('" + str(hostIp) + "', " + str(port) + ')'
+
     nickname = raw_input("Enter your nickname: ")
     s.send(nickname)
-    opnickname = s.recv(1024)
+    opnickname = s.recv(64)
 
     print "Type i + enter for instruction."
 
@@ -33,22 +35,17 @@ while True:
                 print "You are no longer connected to server. If you want to try reconnect press enter."
                 break
             if data == opnickname + ": " + "-s" + " ":
-                print"Other person typed -s. Starting receive a file function"
                 fileName = s.recv(1024)
                 localFileName = open("Send and receive files folder/" + fileName, 'wb')
-                print"File open"
                 bytesReceived = s.recv(4096)
-                print"Bytes received"
                 localFileName.write(bytesReceived)
-                print"Bytes write"
                 while bytesReceived != "":
                     print"Loop started. The next code line is Bytes receive"
                     bytesReceived = s.recv(4096)  #This is the place where the receive a file process stops.
                     print"Bytes received in loop"
                     localFileName.write(bytesReceived)
-                    print"Bytes write in loop"
                 localFileName.close()
-                print"You received a file from " + nickname + " "
+                print"You received a file from " + opnickname + " "
             else:
                 print data
         return
