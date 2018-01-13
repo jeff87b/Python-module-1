@@ -10,7 +10,6 @@ s.listen(1)                 # Now wait for client connection
 print"Listening for incoming connection"
 
 c, addr = s.accept()        # Establish connection with client
-
 print 'Got connection from', addr
 
 nickname = raw_input("Enter your nickname: ")
