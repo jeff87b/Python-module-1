@@ -1,6 +1,6 @@
 The error: The file the other person receives is either empty or some bytes are missing.
 I have added print lines if you send a file from server to client.
-From client to server it's not printlines.
+From client to server it's not print lines.
 
 When the error happens, receive a file process stops.
 
