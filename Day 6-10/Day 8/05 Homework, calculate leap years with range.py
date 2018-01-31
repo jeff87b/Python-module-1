@@ -22,5 +22,5 @@ print(is_leap_year(1900, 1920))
 # print(type(is_leap_year(1900, 1920)))
 #
 # usageExample = (is_leap_year(1900, 1920))
-# for leapYear in usageExample:
-#     print(leapYear)
+# for leapYears in usageExample:
+#     print(leapYears)
