@@ -1,40 +1,26 @@
-def isLeapYear(year_entered):
-    check_divisible_by_4 = year_entered % 4
-    check_divisible_by_100 = year_entered % 100
-    if check_divisible_by_4 == 0 and check_divisible_by_100 != 0:
-        print(lowerRange)
+def is_leap_year(lower_range, higher_range):
+    lower_range = int(lower_range) - 1
+    higher_range = int(higher_range)
+    range_list = []
+    while lower_range < higher_range:
+        lower_range = lower_range + 1
+        if lower_range % 4 == 0 and lower_range % 100 != 0:
+            range_list.append(lower_range)
 
-    elif check_divisible_by_4 == 0 and check_divisible_by_100 == 0:
-        check_divisible_by_400 = year_entered % 400
-        if check_divisible_by_100 == 0 and check_divisible_by_400 != 0:
-            print("Special years that is not a leap year = " + str(lowerRange))
+        elif lower_range % 4 == 0 and lower_range % 100 == 0:
+            if lower_range % 100 == 0 and lower_range % 400 != 0:
+                pass
+            else:
+                range_list.append(lower_range)
         else:
-            print(lowerRange)
-    else:
-        pass
-    return
+            pass
+    return range_list
 
 
-yearEntered = input("Enter year range: ")
-while True:
-    if yearEntered == "-h":
-        print("Help text: x-y")
-        yearEntered = input()
-    if "-" in yearEntered:
-        if not yearEntered == "-h":
-            break
-    else:
-        print("Help text: x-y")
-        yearEntered = input()
+print(is_leap_year(1900, 1920))
 
-
-rangeEntered = yearEntered.split("-")
-lowerRange = int(rangeEntered[0])
-higherRange = int(rangeEntered[1])
-
-count = 0
-while lowerRange < higherRange:
-    isLeapYear(lowerRange)
-    lowerRange = lowerRange + 1
-
-isLeapYear(higherRange)
+# print(type(is_leap_year(1900, 1920)))
+#
+# usageExample = (is_leap_year(1900, 1920))
+# for leapYear in usageExample:
+#     print(leapYear)
